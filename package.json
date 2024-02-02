@@ -4,7 +4,8 @@
   "description": "微信支付有优惠小程序龙年冲冲冲游戏刷免费提现券脚本",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build app.js -o dist && pkg ./dist/index.js -o app"
   },
   "author": "",
   "license": "ISC",
