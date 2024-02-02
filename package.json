@@ -1,0 +1,14 @@
+{
+  "name": "spring_festival_2024",
+  "version": "1.0.0",
+  "description": "微信支付有优惠小程序龙年冲冲冲游戏刷免费提现券脚本",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7"
+  }
+}
