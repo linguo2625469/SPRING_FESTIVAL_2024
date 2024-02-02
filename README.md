@@ -42,13 +42,9 @@ node index.js
 npm install pkg -g
 npm install ncc -g
 ```
-使用ncc将代码编译一次
+运行打包命令（此命令写在package.json中）
 ```text
-ncc build app.js -o dist
-```
-然后使用pkg打包编译后的js
-```text
-pkg ./dist/index.js -o app
+npm run build
 ```
 
 然后你就看到目录下多了个app.exe 另外将config.txt放在统一文件夹内
