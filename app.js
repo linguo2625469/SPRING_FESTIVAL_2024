@@ -1,37 +1,27 @@
-// 账号token
-let token=""
-// 大于多少分提交游戏领取提现券
-let maxScore = 7000
-// 游戏activity_id
-let activity_id = 1000013
-// 模式，true为开启pk，false为关闭 (js中首字母为小写)
-let game_module = true
-// pk_id 要pk的对应id
-let game_pk_id  = ""
-// 以下为游戏代码，若有问题可自行更改
-
+const fs = require('fs');
+let configFile = fs.readFileSync('config.txt', 'utf-8')
+let { token, maxScore, activity_id, game_module, game_pk_id } = JSON.parse(configFile)
 const { game_create,game_report,game_get,award_obtain,get_game_score,sleep } = require('./utils.js');
-if(!token){
-    console.log("请填写token")
-    return
-}
-if(game_module){
-    console.log('开启pk模式');
-    if(!game_pk_id){
-        console.log("请填写pk_id")
+async function start() {
+    if(!token){
+        console.log("请填写token")
         return
     }
-}else{
-    console.log('正常模式');
-    game_pk_id = ""
-}
-
-async function start() {
+    if(game_module){
+        console.log('开启pk模式');
+        if(!game_pk_id){
+            console.log("请填写pk_id")
+            return
+        }
+    }else{
+        console.log('正常模式');
+        game_pk_id = ""
+    }
     while (true) {
         let res = await game_create(token, game_pk_id, activity_id);
         // console.log(res);
         if(!!!res.data) {
-            console.log(res);
+            console.log(res)
             console.log("创建游戏失败")
             await sleep(1000)
             continue

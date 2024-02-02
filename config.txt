@@ -1,0 +1,7 @@
+{
+    "token":"123123",
+    "maxScore":7000,
+    "activity_id":1000013,
+    "game_module":false,
+    "game_pk_id":""
+}

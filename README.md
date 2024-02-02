@@ -36,6 +36,29 @@ npm install
 node index.js
 ```
 
+#  新增pkg打包方法，不会打包的去release下载
+首先安装pkg和ncc模块
+```text
+npm install pkg -g
+npm install ncc -g
+```
+使用ncc将代码编译一次
+```text
+ncc build app.js -o dist
+```
+然后使用pkg打包编译后的js
+```text
+pkg ./dist/index.js -o app
+```
+
+然后你就看到目录下多了个app.exe 另外将config.txt放在统一文件夹内
+首先修改config.txt中的参数 然后双击app.exe即可运行
+
+
+pkg安装 打包失败的请参考
+[Pkg打包nodejs程序过程中遇到的问题与处理](https://blog.csdn.net/qq_37887537/article/details/109692670)
+
+
 若npm install 请自行百度更换npm源方法 或者使用pnpm cnpm 等
 
 #  警告：软件免费开源，仅供学习交流使用，请勿用于非法用途！
